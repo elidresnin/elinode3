@@ -51,7 +51,8 @@ header {
 header #intro {
     font-size: 35px;
     height: 50px;
-    display: inline
+    display: inline;
+    text-align: center;
 }
 
 header #github, header #github:active, header #github:hover  {
@@ -60,7 +61,7 @@ header #github, header #github:active, header #github:hover  {
     font-size: 20px;
     display: block;
     text-align: center;
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 header #github i {
@@ -81,9 +82,9 @@ header #github i {
     width: calc(100% - 64px);
     height: 50px;
     left: 0;
-    color: #FFF;
+    color: #FFFFFF;
     padding: 0px 5px;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     background: none;
     font-size: 14px;
     border-radius: 2px;
