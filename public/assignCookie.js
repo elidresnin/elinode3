@@ -1,3 +1,20 @@
+const form = document.forms[0];
+
+
+form.addEventListener('submit', (event) => {
+    // handle the form data
+  user = form.elements['uname'];
+password = form.elements['psw'];
+
+
+
+  
+});
+
+
+
+
+
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
