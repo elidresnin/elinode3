@@ -1,4 +1,4 @@
-
+console.log("hi");
 var uname = document.querySelector('#uname');
 var psw = document.querySelector('#psw');
 
@@ -9,6 +9,7 @@ const UIDGenerator = require('uid-generator');
 logins = require(path.join(__dirname +'/../logins.json')); 
 tokens = require(path.join(__dirname +'/../validTokens.json')); // path may vary
 if(logins[uname] == psw){
+  console.log("passed");
 var generatedToken = uidgen.generateSync();
   tokens[uname] = generatedToken;
   setCookie("name",uname,1); 
