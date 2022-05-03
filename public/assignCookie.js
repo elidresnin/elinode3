@@ -1,17 +1,20 @@
-const form = document.forms[0];
 
+var uname = document.querySelector('#uname');
+var psw = document.querySelector('#psw');
 
-form.addEventListener('submit', (event) => {
-    // handle the form data
-  user = form.elements['uname'];
-password = form.elements['psw'];
+const UIDGenerator = require('uid-generator');
 
-
-
-  
-});
-
-
+ path = require('path'),
+  __parentDir = path.dirname(module.parent.filename);
+logins = require(path.join(__dirname +'/../logins.json')); 
+tokens = require(path.join(__dirname +'/../validTokens.json')); // path may vary
+if(logins[uname] == psw){
+var generatedToken = uidgen.generateSync();
+  tokens[uname] = generatedToken;
+  setCookie("name",uname,1); 
+  setCookie(uname,generatedToken,1); 
+  fs.writeFileSync(path.join(__dirname +'/../validTokens.json'), JSON.stringify(validTokens));
+}
 
 
 
@@ -34,13 +37,5 @@ function getCookie(name) {
     }
     return null;
 }
-const UIDGenerator = require('uid-generator');
-generatedToken = uidgen.generateSync();
- path = require('path'),
-  __parentDir = path.dirname(module.parent.filename);
-
-  validTokens = require(path.join(__dirname +'/../validTokens.json')); // path may vary
-validTokens[loginUser] = generatedToken;
-fs.writeFileSync(path.join(__dirname +'/../validTokens.json'), JSON.stringify(validTokens));
-setCookie(loginUser,generatedToken,1); //set "user_email" cookie, expires in 30 days
+//set "user_email" cookie, expires in 30 days
 //var userEmail=getCookie("user_email");//"bobthegreat@gmail.com"

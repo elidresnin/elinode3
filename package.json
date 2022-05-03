@@ -7,8 +7,9 @@
     "lib": "lib"
   },
   "dependencies": {
-    "ws": "^7.4.3",
-    "uid-generator": "^2.0.0"
+    "jsdom": "^19.0.0",
+    "uid-generator": "^2.0.0",
+    "ws": "^7.4.3"
   },
   "devDependencies": {},
   "scripts": {
