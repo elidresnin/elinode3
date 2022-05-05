@@ -1,7 +1,10 @@
 console.log("hi");
+
+await document.querySelector('#uname');
+await document.querySelector('#psw');
 var uname = document.querySelector('#uname');
 var psw = document.querySelector('#psw');
-
+console.log(uname+""+psw);
 const UIDGenerator = require('uid-generator');
 
  path = require('path'),
@@ -10,7 +13,7 @@ logins = require(path.join(__dirname +'/../logins.json'));
 tokens = require(path.join(__dirname +'/../validTokens.json')); // path may vary
 if(logins[uname] == psw){
   console.log("passed");
-var generatedToken = uidgen.generateSync();
+var generatedToken = UIDGenerator.generateSync();
   tokens[uname] = generatedToken;
   setCookie("name",uname,1); 
   setCookie(uname,generatedToken,1); 
@@ -18,6 +21,7 @@ var generatedToken = uidgen.generateSync();
 }
 
 
+//window.location.href = "https://app-866ae316-8ad4-4930-a2d2-d736b4909da1.cleverapps.io/";
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -38,5 +42,7 @@ function getCookie(name) {
     }
     return null;
 }
+
+
 //set "user_email" cookie, expires in 30 days
 //var userEmail=getCookie("user_email");//"bobthegreat@gmail.com"
